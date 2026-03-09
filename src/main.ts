@@ -35,6 +35,7 @@ async function bootstrap() {
     .setTitle('Orders API')
     .setDescription('API para gerenciar pedidos e itens')
     .setVersion('1.0')
+    .addBearerAuth() // JWT bearer auth
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-docs', app, document);

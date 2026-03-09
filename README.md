@@ -66,6 +66,16 @@ GET http://localhost:3000/api-docs
 
 para ver a API interativa.
 
+## Autenticação
+
+A API agora possui proteção via JWT.
+
+- Crie um usuário via `POST /auth/register` ou utilize o seed (usuário `admin` / senha `password`).
+- Obtenha um token chamando `POST /auth/login` com JSON contendo `username` e `password`.
+- Envie o token em `Authorization: Bearer <token>` para acessar os recursos.
+- Os endpoints de `/order` exigem autenticação; operações de criação, atualização e
+  exclusão requerem role `admin` (definido nas tabelas `roles` e `user_roles`).
+
 ## Endpoints
 
 | Método | Caminho             | Descrição                              |
